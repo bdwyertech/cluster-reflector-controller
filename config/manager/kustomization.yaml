@@ -5,4 +5,4 @@ kind: Kustomization
 images:
 - name: controller
   newTag: latest
-  newName: ghcr.io/bdwyertech/cluster-reflector-controller
+  newName: ghcr.io/bdwyertech/weave-gitops-enterprise/cluster-reflector-controller

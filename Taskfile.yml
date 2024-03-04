@@ -1,0 +1,15 @@
+version: '3'
+
+env:
+  VERSION: v0.31.2-bdwyertech
+
+tasks:
+  build-push:
+    cmds:
+      - make docker-build
+      - make docker-push
+  helm-chart:
+    cmds:
+      - make helm-chart
+      - helm package charts/cluster-reflector-controller --app-version $VERSION --version $VERSION --destination charts
+      - helm push "charts/cluster-reflector-controller-${VERSION}.tgz" oci://ghcr.io/bdwyertech/weave-gitops-enterprise
