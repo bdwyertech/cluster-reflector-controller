@@ -4,9 +4,9 @@ VERSION ?= $(shell git describe --tags --always)
 CHART_VERSION := $(shell echo $(VERSION) | sed 's/^v//')
 
 # Image URL to use all building/pushing image targets
-IMG ?= ghcr.io/weaveworks/cluster-reflector-controller:${VERSION}
+IMG ?= ghcr.io/bdwyertech/cluster-reflector-controller:${VERSION}
 
-CHART_REGISTRY ?= ghcr.io/weaveworks/charts
+CHART_REGISTRY ?= ghcr.io/bdwyertech/charts
 
 # ENVTEST_K8S_VERSION refers to the version of kubebuilder assets to be downloaded by envtest binary.
 ENVTEST_K8S_VERSION = 1.28.0
